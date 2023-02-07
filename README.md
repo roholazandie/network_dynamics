@@ -20,7 +20,7 @@ However this can be done with the Laplacian matrix too read [this post](https://
 
 In the case of fully connected graph, the heat will dissipate very quickly:
 
-![alt text](data/heat_transfer2.gif.gif)
+![alt text](data/heat_transfer2.gif)
 
 
 We can also see the changes in the eigenvalues of the Laplacian matrix by adding more and more edges.
