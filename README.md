@@ -12,11 +12,22 @@ the formula is:
 ![Demo](data/f1.png)
 
 
-However this can be done with the Laplacian matrix too read [this post]() for more info. The output will look like the following:
+However this can be done with the Laplacian matrix too read [this post](https://hilbert-cantor.medium.com/discrete-laplacian-8a5dde7ff001) and [this](https://hilbert-cantor.medium.com/discrete-laplacian-2-4fc608a3ea37) for more info. The output will look like the following:
 
 
 ![alt text](data/heat_transfer1.gif)
 
+
+In the case of fully connected graph, the heat will dissipate very quickly:
+
+![alt text](data/heat_transfer2.gif.gif)
+
+
+We can also see the changes in the eigenvalues of the Laplacian matrix by adding more and more edges.
+
+
+
+![alt text](data/laplacian.gif)
 
 
 
