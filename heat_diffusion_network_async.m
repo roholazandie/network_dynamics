@@ -13,8 +13,14 @@ m = 10; % size of the first connected component
 n = 7; % size of the second connected component
 A = create_two_components_graph(m, n);
 
+
 phi = [randi([1000 2000], 1, m) randi([0 400], 1, n)]';
 N = length(A); % number of nodes
+
+D = diag(sum(A, 1));
+L = D - A;
+
+x = linsolve(L, zeros(N, 1));
 
 equilibrium_temperature = mean(phi);
 

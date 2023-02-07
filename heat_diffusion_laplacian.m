@@ -1,7 +1,7 @@
 clc;
 clear;
 
-T =300;
+T =60;
 dt = 0.1;
 N = 3;
 prev_idx = mod((1:N)-2, N)+1;
@@ -22,14 +22,17 @@ phi = [1, 1, 2; 5 10 0; 1 2 1];
 
 m = 10;
 n = 7;
-A = create_two_components_graph(m, n);
+% A = create_two_components_graph(m, n);
 
-% f = [100* ones(1, m) 10* ones(1, n)]';
+A = create_one_component_graph(n+m);
+
 phi = [randi([1000 2000], 1, m) randi([0 400], 1, n)]';
 N = length(A);
 
 D = diag(sum(A, 1));
 L = D - A;
+
+eig(L)
 
 video = VideoWriter('animation.avi', 'Motion JPEG AVI');
 video.Quality = 100;
@@ -84,7 +87,7 @@ for t=1:T
         visualize_graph(A, phi./norm(phi));
         axis equal off;
         drawnow;
-        pause(0.5);
+        pause(0.2);
         frame = getframe(gcf);
         writeVideo(video, frame);
      end
